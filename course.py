@@ -27,7 +27,6 @@ def vitessePiste(r,l,temps):
 r = int(input("Rayon de la piste ? "))
 l = int(input("Longueur de la piste ? "))
 
-
 ## C'est moche, on va le mettre dans une boucle
 # t1 = int(input("Temps du coureur 1 ? "))
 # t2 = int(input("Temps du coureur 2 ? "))
@@ -49,10 +48,34 @@ l = int(input("Longueur de la piste ? "))
 
 # print("La vitesse moyenne est de "+str(vitesseMoyenne))
 
-# Liste qui va contenir la vitesse de tous les coureurs
-vitesseCoureurs = []
+nb_coureurs = int(input("Combien de coureurs ? "))
+liste_temps = []
+liste_vitesses = []
+for i in range(0,nb_coureurs):
+    # Demander un temps
+    t = int(input("Temps du coureur 1 ? "))
+    # Calculer la vitesse
+    v = vitessePiste(r,l,t)
+    # Enregistrer dans les listes
+    liste_temps.append(t)
+    liste_vitesses.append(v)
 
-# Dans une boucle, demander 5 fois la vitesse d'un coureur et le mettre dans la liste
+# Ici, les deux listes sont remplies de 5 éléments chacune
+
+# # Calcul de la somme => méthode index
+# # Préferer la méthode en liste, c'est le principe d'une boucle for in
+# somme = 0
+# for i in range(0,5):
+#     somme = somme + liste_vitesses[i]
+
+# Calcul de la somme => méthode liste
+somme = 0
+for v in liste_vitesses:
+    somme = somme + v
+
+# Calcul de la moyenne : somme/nb d'éléments
+moyenne = somme / len(liste_vitesses)
+
+print("La vitesse moyenne est de "+str(moyenne))
 
 
-# Calculer la vitesse moyenne à partir de la liste
