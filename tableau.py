@@ -16,3 +16,31 @@ def entreeTableau(a):
             break
 
     return tab
+
+
+def factorielle(n):
+    """
+    Calcul de la factorielle de n de manière récursive
+    Récursion : n! = n * (n-1)!
+    Condition Limite : 1! = 1
+    """
+    # Commencer par la condition limite !
+    if n == 1:
+        return 1
+    # Récursion
+    else:
+        return n * factorielle(n-1)
+
+
+def sommeRecursive(tab):
+    """
+    Somme tous les chiffres de 1 à n dans un tableau.
+    Récursion : si tab à une longueur n, on ajoute le dernier élément aux n-1 premiers éléments
+    Condition de fin : si len(tab)==0, la somme est 0
+    """
+    # Condition limite
+    if len(tab) == 0:
+        return 0
+    # Récursion (len(tab) > 0)
+    # Ajoute le dernier élément à la somme des n-1 premiers éléments
+    return tab[len(tab)-1] + sommeRecursive(tab[0:-1])
